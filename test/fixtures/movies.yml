@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: one
+  year: 1
+  producer: one
+  release_date: 2022-12-01
+
+two:
+  name: MyString
+  category: two
+  year: 1
+  producer: two
+  release_date: 2022-12-01
