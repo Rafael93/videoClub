@@ -21,7 +21,7 @@
   <div class="mb-3">
     <div class="field">
       <%= form.label :category_id, class:"form-label" %>
-      <%= form.text_field :category_id, class:"form-control" %>
+      <%= form.collection_select(:category_id, list_categories, :id, :name, prompt: true) %>
     </div>
   </div>
   
@@ -35,14 +35,14 @@
   <div class="mb-3">
     <div class="field">
       <%= form.label :producer_id, class:"form-label" %>
-      <%= form.text_field :producer_id, class:"form-control" %>
+      <%= form.collection_select(:producer_id, list_producers, :id, :name, prompt: true) %>
     </div>
   </div>
   
   <div class="mb-3">
     <div class="field">
       <%= form.label :release_date, class:"form-label" %>
-      <%= form.date_select :release_date, class:"form-control" %>
+      <%= form.date_select(:release_date, start_year: 1888) %>
     </div>
   </div>
 

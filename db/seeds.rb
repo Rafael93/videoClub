@@ -9,24 +9,24 @@
 
 #create categories
 
-cat1 = Category.new("Terror")
+cat1 = Category.create(name: "Terror")
 cat1.save
-cat2 = Category.new("Comedia")
+cat2 = Category.create(name: "Comedia")
 cat2.save
-cat3 = Category.new("Romance")
+cat3 = Category.create(name: "Romance")
 cat3.save
-cat4 = Category.new("Suspenso")
+cat4 = Category.create(name: "Suspenso")
 cat4.save
-cat5 = Category.new("Ciencia Ficcion")
+cat5 = Category.create(name: "Ciencia Ficcion")
 cat5.save
 
 #create producers
 
-pro1 = Producer.new("Stanley Kubrick")
+pro1 = Producer.create(name: "Stanley Kubrick")
 pro1.save
-pro2 = Producer.new("Steven Spielberg")
+pro2 = Producer.create(name: "Steven Spielberg")
 pro2.save
-pro3 = Producer.new("Quentin Tarantino")
+pro3 = Producer.create(name: "Quentin Tarantino")
 pro3.save
-pro4 = Producer.new("Michael Bay")
+pro4 = Producer.create(name: "Michael Bay")
 pro4.save

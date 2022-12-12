@@ -92,6 +92,8 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    icon_links (0.2.4)
+      activesupport (>= 2.3)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -219,6 +221,7 @@ DEPENDENCIES
   bootstrap (~> 5.2, >= 5.2.3)
   byebug
   capybara (>= 3.26)
+  icon_links (~> 0.2.4)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)

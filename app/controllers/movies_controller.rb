@@ -13,6 +13,8 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+    @category_list = Category.all.order(:name)
+    @producer_list = Producer.all.order(:name)
   end
 
   # GET /movies/1/edit
