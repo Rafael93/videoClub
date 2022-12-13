@@ -56,4 +56,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
-gem 'icon_links', '~> 0.2.4'
+gem 'hotwire-rails'
+gem 'turbo-rails'

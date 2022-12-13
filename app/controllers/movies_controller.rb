@@ -3,7 +3,12 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    if params['search'].blank?
+      @movie_list=Movie.joins(:producer,:category).all
+       else
+         @movie_list=Movie.joins(:producer,:category).where("movies.name like ? or categories.name like ? or producers.name like ?","%#{params['search']}%", "%#{params['search']}%", "%#{params['search']}%")
+    end
+    #@movies = Movie.all
   end
 
   # GET /movies/1 or /movies/1.json
@@ -19,6 +24,8 @@ class MoviesController < ApplicationController
 
   # GET /movies/1/edit
   def edit
+    @category_list = Category.all.order(:name)
+    @producer_list = Producer.all.order(:name)
   end
 
   # POST /movies or /movies.json
@@ -51,6 +58,7 @@ class MoviesController < ApplicationController
 
   # DELETE /movies/1 or /movies/1.json
   def destroy
+    @movie = Movie.find(params[:id])
     @movie.destroy
 
     respond_to do |format|
