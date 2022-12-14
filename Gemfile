@@ -58,3 +58,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'hotwire-rails'
 gem 'turbo-rails'
+gem "font-awesome-sass", "~> 6.2.1"
