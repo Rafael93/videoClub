@@ -6,9 +6,8 @@ class MoviesController < ApplicationController
     if params['search'].blank?
       @movie_list=Movie.joins(:producer,:category).all
        else
-         @movie_list=Movie.joins(:producer,:category).where("movies.name like ? or categories.name like ? or producers.name like ?","%#{params['search']}%", "%#{params['search']}%", "%#{params['search']}%")
-    end
-    #@movies = Movie.all
+         @movie_list=Movie.joins(:producer,:category).where("movies.name like ? or categories.name like ? or producers.name like ? or movies.year like ? or movies.release_date like ?","%#{params['search']}%", "%#{params['search']}%", "%#{params['search']}%", "%#{params['search']}%", "%#{params['search']}%")
+       end
   end
 
   # GET /movies/1 or /movies/1.json

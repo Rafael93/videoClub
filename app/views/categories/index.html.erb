@@ -1,2 +1,20 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<h1>Categories</h1>
+
+<table class="table table-primary table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to image_tag("eye-fill"), category %></td>
+        <td><%= link_to image_tag("pencil-square"), edit_category_path(category) %></td>
+        <td><%= link_to image_tag("trash"), category_path(category), data: { turbo_method: "delete", turbo_confirm: 'Confirmar?' }%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
