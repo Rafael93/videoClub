@@ -9,7 +9,7 @@ import "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
-require("@fortawesome/fontawesome-free");
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 
 Rails.start()

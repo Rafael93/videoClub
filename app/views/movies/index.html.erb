@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Movies</h1> <i class="fa-thin fa-camera-movie"></i>
-
-
-<div id="search_">
-    <%=form_tag(movies_path, method: "get") do %>
-    <%=text_field_tag :search, params[:search] %>
-    <%=submit_tag "Buscar", :class=>'btn btn-primary' %>
-    <% end %>
+<div id="header" style="display: flex; justify-content: space-between;">
+  <h1>Peliculas</h1>
+  <div id="search_">
+      <%=form_tag(movies_path, method: "get") do %>
+      <%=text_field_tag :search, params[:search] %>
+      <%=submit_tag "Buscar", :class=>'btn btn-primary' %>
+      <% end %>
+  </div>
 </div>
 
-<table class="table table-primary table-striped">
+<table class="table table-primary table-striped table-bordered">
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -20,7 +20,7 @@
       <th scope="col">Release date</th>
     </tr>
   </thead>
-  
+
   <tbody>
     <% @movie_list.each do |movie| %>
       <tr>
@@ -29,9 +29,9 @@
         <td><%= movie.year %></td>
         <td><%= movie.producer.name %></td>
         <td><%= movie.release_date %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Delete', movie_path(movie), data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' }%></td>
+        <td><%= link_to image_tag("eye-fill"), movie %></td>
+        <td><%= link_to image_tag("pencil-square"), edit_movie_path(movie) %></td>
+        <td><%= link_to image_tag("trash"), movie_path(movie), data: { turbo_method: "delete", turbo_confirm: 'Confirmar?' }%></td>
       </tr>
     <% end %>
   </tbody>
